@@ -6,8 +6,9 @@ package 'ntp' do
 	action :install
 end
 
-file '/etc/motd' do
-	content 'This VM/ChefServer is property of marcosama during this spin cycle'
+template '/etc/motd' do
+	source 'motd.erb'
+	action :create
 	owner 'root'
 	group 'root'
 end
